@@ -1,0 +1,54 @@
+﻿Build started 10/06/2015 08:11:46.
+     1>Project "C:\Users\leonardoalbuquerque\Documents\Visual Studio 2010\Projects\RiverAttack\RiverAttack\RiverAttack.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\RiverAttack.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Blocks.cpp RiverAttack.cpp
+         RiverAttack.cpp
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\riverattack.cpp(80): error C2248: 'Blocks::drawBase' : cannot access private member declared in class 'Blocks'
+                 c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.h(13) : see declaration of 'Blocks::drawBase'
+                 c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.h(4) : see declaration of 'Blocks'
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\riverattack.cpp(81): error C2248: 'Blocks::drawTriangle' : cannot access private member declared in class 'Blocks'
+                 c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.h(14) : see declaration of 'Blocks::drawTriangle'
+                 c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.h(4) : see declaration of 'Blocks'
+         Blocks.cpp
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(63): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(63): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(64): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(64): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(65): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(65): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(66): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(66): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(71): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(71): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(72): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(72): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(73): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(73): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(74): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(74): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(97): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(97): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(98): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(98): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(99): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(99): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(100): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(100): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(108): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(108): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(109): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(109): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(110): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(110): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(111): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(111): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(112): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\leonardoalbuquerque\documents\visual studio 2010\projects\riverattack\riverattack\blocks.cpp(112): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+         Generating Code...
+     1>Done Building Project "C:\Users\leonardoalbuquerque\Documents\Visual Studio 2010\Projects\RiverAttack\RiverAttack\RiverAttack.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.23
