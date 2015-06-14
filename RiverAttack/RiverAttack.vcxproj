@@ -74,11 +74,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Airplane.cpp" />
+    <ClCompile Include="Base.cpp" />
     <ClCompile Include="Blocks.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Colision.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="RiverAttack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Airplane.h" />
+    <ClInclude Include="Base.h" />
     <ClInclude Include="Blocks.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Colision.h" />
+    <ClInclude Include="Map.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

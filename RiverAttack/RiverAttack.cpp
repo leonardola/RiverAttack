@@ -3,12 +3,12 @@
 #include <GL/glut.h>
 #include <windows.h>
 #include <cmath>
-#include "Blocks.h"
+#include "Map.h"
+#include "Airplane.h"
+#include "Colision.h"
 
 #define janela_altura 768
 #define janela_largura 1024
-
-Blocks blocks(janela_altura,janela_largura);
 
 void desenhar (int initial);
 void display (void);
@@ -16,10 +16,15 @@ void keyboard();
 void tela(GLsizei w, GLsizei h);
 void animate(int val);
 
+Airplane airplane(janela_altura, janela_largura);
+
+Map map(janela_altura,janela_largura);
+
+Colision colision(&airplane, &map);
 
 int position = 0;
 int animationTime = 10;
-
+int airPlaneXPosition = 0;
 
 
 int main(int argc, char** argv){
@@ -35,12 +40,11 @@ int main(int argc, char** argv){
 	glutReshapeFunc(tela); //configura a tela
 	glutDisplayFunc(display);
 
-	glutTimerFunc(animationTime,animate,1);
+	animate(position);
 
 	glutMainLoop();//redesenhar
 
 	return (0);
-
 }
 
 void display(){
@@ -59,7 +63,6 @@ void display(){
 	glViewport(0, 0, janela_largura, janela_altura);
 
 	glFlush();//execute o desenho
-
 }
 
 
@@ -77,8 +80,15 @@ void desenhar(int initial){
 
 	glClear(GL_COLOR_BUFFER_BIT); //EXECUTA A LIMPEZA
 
-	initial = blocks.drawBase(initial);
-	blocks.drawTriangle(initial);
+	map.drawMap(initial);
+	airplane.getKeyboardAction();
+	airplane.drawPlane();
+
+	bool colided = colision.hasColided();
+
+	if(colided){
+		printf("bateu");
+	}
 
 	glFlush();
 
@@ -87,10 +97,10 @@ void desenhar(int initial){
 
 void animate(int val){
 
-	desenhar(position);
+	desenhar(val);
 
-	position--;
+	val -= 3;
 
-	glutTimerFunc(animationTime,animate,1);
+	glutTimerFunc(animationTime,animate,val);
 
 }

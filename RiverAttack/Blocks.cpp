@@ -4,6 +4,11 @@
 #include <GL/glut.h>
 #include <windows.h>
 #include <iostream>
+#include <random>
+
+Blocks::Blocks(void){
+
+}
 
 Blocks::Blocks(int windowHeight, int windowWidth){
 
@@ -11,6 +16,7 @@ Blocks::Blocks(int windowHeight, int windowWidth){
 	this->windowWidth = windowWidth;
 
 	this->objectType = this->getRandomBlock();
+	this->blockHeight = 200;
 	
 }
 
@@ -21,14 +27,10 @@ int Blocks::drawBlock(int initialPosition){
 
 	int finalPosition = 0;
 
-	switch(this->objectType){
-
-		case 0:
-			finalPosition = this->drawBase(initialPosition);
-			break;
-		case 1:
-			finalPosition = this->drawTriangle(initialPosition);
-			break;
+	if(this->objectType < 50){
+		finalPosition = this->drawBase(initialPosition);
+	}else{
+		finalPosition = this->drawTriangle(initialPosition);
 	}
 
 	return finalPosition;
@@ -40,12 +42,15 @@ int Blocks::drawBlock(int initialPosition){
 **/
 int Blocks::getRandomBlock(){
 
-	//25 + ( std::rand() % ( 63 - 25 + 1 ) ) de 25 a 63
+	 return rand()%100;
 
-	int type = 0 + ( std::rand() % ( 2 - 0 ) ); //randomico de 0 a 2
+	/*std::random_device rd;     // only used once to initialise (seed) engine
+	std::mt19937 rng(rd());    // random-number engine used (Mersenne-Twister in this case)
+	std::uniform_int_distribution<int> uni(0,50); // guaranteed unbiased
 
-	return type;
+	auto random_integer = uni(rng);
 
+	return random_integer;*/
 }
 
 
@@ -82,15 +87,6 @@ int Blocks::drawBase(int initial){
 */
 int Blocks::drawTriangle(int initial){
 
-	/*glBegin(GL_POLYGON);
-		glColor3f(1.0 , 1.0, 0.0); //cor
-		glVertex2f(-this->windowWidth/2, 200 + initial);
-		glVertex2f(-this->windowWidth/2 + 200, 200 + initial);
-		glVertex2f(-this->windowWidth/2 + 100, 100 + initial);
-		glVertex2f(-this->windowWidth/2 + 100, initial);
-		glVertex2f(-this->windowWidth/2, initial);
-	glEnd();*/
-
 	//esquerdo
 	glBegin(GL_POLYGON);
 		glColor3f(1.0 , 1.0, 0.0); //cor
@@ -115,3 +111,39 @@ int Blocks::drawTriangle(int initial){
 	return initial + 200;
 
 }
+
+int Blocks::getBlockHeight(){
+	return this->blockHeight;
+}
+
+bool Blocks::hasColided(Airplane plane){
+
+	if(this->objectType < 50){
+		return this->hasColidedWithBase(plane);
+	}else{
+		return this->hasColidedWithTriangle(plane);
+	}
+
+}
+
+bool Blocks::hasColidedWithBase(Airplane plane){
+	
+	plane.getYPosition();
+
+	return this->hasColidedWithLeftBase(plane) || this->hasColidedWithRightBase(plane);
+
+}
+
+bool Blocks::hasColidedWithLeftBase(Airplane plane){
+	return plane.getXPosition() - plane.getWidth() < -this->windowWidth/2 + 100;
+}
+
+bool Blocks::hasColidedWithRightBase(Airplane plane){
+	return plane.getXPosition() + plane.getWidth() > this->windowWidth/2 - 100;
+}
+
+bool Blocks::hasColidedWithTriangle(Airplane plane){
+	return false;
+}
+
+
