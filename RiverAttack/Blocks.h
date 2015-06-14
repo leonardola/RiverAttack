@@ -1,25 +1,27 @@
 #pragma once
 #include "Airplane.h"
+#include "Shape.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+#include <iostream>
+#include <random>
+#include "Base.h"
+#include "Triangle.h"
+
 class Blocks
 {
 public:
 	Blocks(void);
-	int windowHeight, windowWidth;
 	Blocks(int windowHeight, int windowWidth);
 	~Blocks(void);
 	int drawBlock(int initialPosition);
 	int getBlockHeight();
 	bool hasColided(Airplane plane);
 private:
-	int objectType;
-	int blockHeight;
-	int drawBase(int initial);
-	int drawTriangle(int initial);
-	int getRandomBlock();
-	bool hasColidedWithBase(Airplane plane);
-	bool hasColidedWithTriangle(Airplane plane);
-	bool hasColidedWithLeftBase(Airplane plane);
-	bool hasColidedWithRightBase(Airplane plane);
-	
-
+	Shape *block;
+	void getRandomBlock();
+	int windowHeight;
+	int windowWidth;
 }; 
+

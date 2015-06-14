@@ -81,6 +81,8 @@
     <ClCompile Include="Colision.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="RiverAttack.cpp" />
+    <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Airplane.h" />
@@ -89,6 +91,8 @@
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Colision.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="Shape.h" />
+    <ClInclude Include="Triangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
