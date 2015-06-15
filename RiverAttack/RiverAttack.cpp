@@ -57,8 +57,8 @@ void display(){
 	glLoadIdentity();
 
 	
-	//ESPECIFICAR O LOCAL AONDE O DESENHO ACONTECE: BEM NO CENTRO DA JANELA MAIS TRANSLACAO
-	glTranslated(janela_largura/2, janela_altura/2, 0.0f);
+	//ESPECIFICAR O LOCAL AONDE O DESENHO ACONTECE: BEM NO CENTRO
+	glTranslated(janela_largura/2, 0, 0.0f);
 
 	glViewport(0, 0, janela_largura, janela_altura);
 
