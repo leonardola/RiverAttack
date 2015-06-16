@@ -26,11 +26,11 @@ void Blocks::getRandomBlock(){
 
 	int randomNumber = rand()%100;
 
-	if(randomNumber < 50 ){
+	if(randomNumber < 33 ){
 		this->block = new Base(this->windowHeight, this->windowWidth);
-	/*}else if(randomNumber < 66){
+	}else if(randomNumber < 66){
 		this->block = new Triangle(this->windowHeight, this->windowWidth);
-	*/}else{
+	}else{
 		this->block = new InvertedTriangle(this->windowHeight, this->windowWidth);
 	}
 

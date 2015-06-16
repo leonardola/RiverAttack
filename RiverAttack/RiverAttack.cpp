@@ -89,9 +89,14 @@ void desenhar(int initial){
 
 	if(colided){
 		printf("bateu");
+		airplane.explode();
+		glFlush();
+		Sleep(1000);
+	}else{
+		glFlush();
 	}
 
-	glFlush();
+	
 
 }
 
