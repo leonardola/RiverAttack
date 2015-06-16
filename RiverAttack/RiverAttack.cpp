@@ -15,6 +15,7 @@ void display (void);
 void keyboard();
 void tela(GLsizei w, GLsizei h);
 void animate(int val);
+void teclado();
 
 Airplane airplane(janela_altura, janela_largura);
 
@@ -25,7 +26,7 @@ Colision colision(&airplane, &map);
 int position = 0;
 int animationTime = 10;
 int airPlaneXPosition = 0;
-
+bool paused = false;
 
 int main(int argc, char** argv){
 
@@ -97,10 +98,21 @@ void desenhar(int initial){
 
 void animate(int val){
 
-	desenhar(val);
+	if(!paused){
+		desenhar(val);
+		val -= 3;
+	}
 
-	val -= 3;
+	teclado();
 
 	glutTimerFunc(animationTime,animate,val);
 
+}
+
+void teclado(){
+
+	if(GetAsyncKeyState(VK_ESCAPE)){//esc
+		paused = !paused;
+		Sleep(100);
+	}
 }

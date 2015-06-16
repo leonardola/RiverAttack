@@ -8,6 +8,7 @@
 #include <random>
 #include "Base.h"
 #include "Triangle.h"
+#include "InvertedTriangle.h"
 
 class Blocks
 {

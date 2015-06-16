@@ -79,6 +79,7 @@
     <ClCompile Include="Blocks.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Colision.cpp" />
+    <ClCompile Include="InvertedTriangle.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="RiverAttack.cpp" />
     <ClCompile Include="Shape.cpp" />
@@ -90,6 +91,7 @@
     <ClInclude Include="Blocks.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Colision.h" />
+    <ClInclude Include="InvertedTriangle.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="Triangle.h" />
