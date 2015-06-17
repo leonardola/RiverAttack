@@ -6,6 +6,7 @@
 #include "Map.h"
 #include "Airplane.h"
 #include "Colision.h"
+#include "Boat.h"
 
 #define janela_altura 768
 #define janela_largura 1024
@@ -18,10 +19,10 @@ void animate(int val);
 void teclado();
 
 Airplane airplane(janela_altura, janela_largura);
-
 Map map(janela_altura,janela_largura);
-
 Colision colision(&airplane, &map);
+Boat boat(janela_altura,janela_largura);
+
 
 int position = 0;
 int animationTime = 10;
@@ -84,6 +85,11 @@ void desenhar(int initial){
 	map.drawMap(initial);
 	airplane.getKeyboardAction();
 	airplane.drawPlane();
+	int val = boat.draw(400 + initial);
+
+	if(boat.bulletHasColided(airplane.getBullet())){
+		boat.setDestroyed();
+	}
 
 	bool colided = colision.hasColided();
 
@@ -95,9 +101,6 @@ void desenhar(int initial){
 	}else{
 		glFlush();
 	}
-
-	
-
 }
 
 
@@ -118,6 +121,6 @@ void teclado(){
 
 	if(GetAsyncKeyState(VK_ESCAPE)){//esc
 		paused = !paused;
-		Sleep(100);
+		Sleep(200);
 	}
 }

@@ -77,11 +77,13 @@
     <ClCompile Include="Airplane.cpp" />
     <ClCompile Include="Base.cpp" />
     <ClCompile Include="Blocks.cpp" />
+    <ClCompile Include="Boat.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Colision.cpp" />
     <ClCompile Include="InvertedTriangle.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="RiverAttack.cpp" />
+    <ClCompile Include="Score.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
@@ -89,10 +91,12 @@
     <ClInclude Include="Airplane.h" />
     <ClInclude Include="Base.h" />
     <ClInclude Include="Blocks.h" />
+    <ClInclude Include="Boat.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Colision.h" />
     <ClInclude Include="InvertedTriangle.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="Score.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="Triangle.h" />
   </ItemGroup>

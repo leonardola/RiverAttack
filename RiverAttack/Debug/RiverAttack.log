@@ -1,26 +1,10 @@
-﻿Build started 16/06/2015 09:29:50.
+﻿Build started 17/06/2015 12:01:03.
      1>Project "C:\Users\leonardoalbuquerque\Documents\GitHub\RiverAttack\RiverAttack\RiverAttack.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "Debug\RiverAttack.unsuccessfulbuild".
+         Creating "Debug\RiverAttack.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt InvertedTriangle.cpp
-         InvertedTriangle.cpp
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(26): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(26): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(27): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(27): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(28): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(28): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(36): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(36): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(37): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(37): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(38): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(38): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(39): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\leonardoalbuquerque\documents\github\riverattack\riverattack\invertedtriangle.cpp(39): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Score.cpp
+         Score.cpp
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -28,11 +12,13 @@
          Debug\Airplane.obj
          Debug\Base.obj
          Debug\Blocks.obj
+         Debug\Boat.obj
          Debug\Bullet.obj
          Debug\Colision.obj
          Debug\InvertedTriangle.obj
          Debug\Map.obj
          Debug\RiverAttack.obj
+         Debug\Score.obj
          Debug\Shape.obj
          Debug\Triangle.obj
        Manifest:
@@ -48,4 +34,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.73
+Time Elapsed 00:00:00.65
