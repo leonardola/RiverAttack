@@ -72,7 +72,7 @@ int Airplane::getXPosition(){
 int Airplane::getYPosition(){
 	return this->yPosition;
 }
-
+ 
 int Airplane::getWidth(){
 	return this->width;
 }
