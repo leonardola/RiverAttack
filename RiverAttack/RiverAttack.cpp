@@ -7,6 +7,7 @@
 #include "Airplane.h"
 #include "Colision.h"
 #include "Boat.h"
+#include "Enemies.h"
 
 #define janela_altura 768
 #define janela_largura 1024
@@ -21,8 +22,9 @@ void teclado();
 Airplane airplane(janela_altura, janela_largura);
 Map map(janela_altura,janela_largura);
 Colision colision(&airplane, &map);
-Boat boat(janela_altura,janela_largura);
+//Boat boat(janela_altura,janela_largura);
 
+Enemies enemies(janela_altura, janela_largura);
 
 int position = 0;
 int animationTime = 10;
@@ -85,11 +87,17 @@ void desenhar(int initial){
 	map.drawMap(initial);
 	airplane.getKeyboardAction();
 	airplane.drawPlane();
-	int val = boat.draw(400 + initial);
 
-	if(boat.bulletHasColided(airplane.getBullet())){
-		boat.setDestroyed();
+	enemies.draw(initial);
+	if(enemies.bulletHasCollided(*airplane.getBullet())){
+		airplane.getBullet()->reset();
 	}
+
+	//int val = boat.draw(400 + initial);
+
+	/*if(boat.bulletHasColided(airplane.getBullet())){
+		boat.setDestroyed();
+	}*/
 
 	bool colided = colision.hasColided();
 
