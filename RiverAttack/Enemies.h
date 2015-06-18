@@ -11,6 +11,7 @@ public:
 	Enemies(int windowHeight, int windowWidth);
 	bool bulletHasCollided(Bullet bullet);
 	void draw(int position);
+	bool hasColided(Airplane plane);
 private:
 	int numberOfEnemies;
 	int windowHeight;

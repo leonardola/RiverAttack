@@ -1,6 +1,6 @@
 #pragma once
-#include"Bullet.h"
-
+#include "Bullet.h"
+#include "Airplane.h"
 class EnemyShape
 {
 public:
@@ -12,6 +12,8 @@ public:
 	void setDestroyed();
 	virtual int draw(int position);
 	int getBottomPosition();
+	bool hasColided(Airplane plane);
+	bool isDestroyed();
 protected:
 	int height;
 	int width;
@@ -25,5 +27,9 @@ protected:
 	bool bulletIsToTheLeft(Bullet * bullet);
 	bool bulletIsToTheRight(Bullet * bullet);
 	bool goneOutOfScreen();
+	bool hasColidedInY(Airplane plane);
+	bool hasColidedInX(Airplane plane);
+	bool isOutToTheLeft(Airplane plane);
+	bool isOutToTheRight(Airplane plane);
 };
 

@@ -10,6 +10,28 @@ EnemyShape::~EnemyShape(void)
 {
 }
 
+bool EnemyShape::hasColided(Airplane plane){
+	if(! this->hasColidedInY(plane)){
+		return false;
+	}
+	return this->hasColidedInX(plane);
+}
+
+bool EnemyShape::hasColidedInY(Airplane plane){
+	return plane.getSuperiorY() > this->yPosition - this->height + this->position;
+}
+
+bool EnemyShape::hasColidedInX(Airplane plane){
+	return !this->isOutToTheLeft(plane) && !this->isOutToTheRight(plane);
+}
+
+bool EnemyShape::isOutToTheLeft(Airplane plane){
+	return plane.getXPosition() + plane.getWidth() < this->xPosition - this->width;
+}
+
+bool EnemyShape::isOutToTheRight(Airplane plane){
+	return plane.getXPosition() - plane.getWidth() > this->xPosition + this->width;
+}
 
 bool EnemyShape::bulletHasCollided(Bullet * bullet){
 	if(!bullet->isShooting()){
@@ -63,4 +85,12 @@ void EnemyShape::setYPosition(int yPosition){
 
 void EnemyShape::setDestroyed(){
 	this->destroyed = true;
+}
+
+int EnemyShape::draw(int position){
+	return position;
+}
+
+bool EnemyShape::isDestroyed(){
+	return this->destroyed;
 }

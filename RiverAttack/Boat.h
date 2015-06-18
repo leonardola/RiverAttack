@@ -10,7 +10,6 @@ public:
 	Boat(int windowHeight, int windowWidth);
 	~Boat(void);
 	bool bulletHasCollided(Bullet * bullet);
-	int draw(int position);
-		
+	int draw(int position);		
 };
 

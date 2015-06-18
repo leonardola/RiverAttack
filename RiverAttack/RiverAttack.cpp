@@ -21,7 +21,7 @@ void teclado();
 
 Airplane airplane(janela_altura, janela_largura);
 Map map(janela_altura,janela_largura);
-Colision colision(&airplane, &map);
+Colision mapColision(&airplane, &map);
 //Boat boat(janela_altura,janela_largura);
 
 Enemies enemies(janela_altura, janela_largura);
@@ -93,15 +93,7 @@ void desenhar(int initial){
 		airplane.getBullet()->reset();
 	}
 
-	//int val = boat.draw(400 + initial);
-
-	/*if(boat.bulletHasColided(airplane.getBullet())){
-		boat.setDestroyed();
-	}*/
-
-	bool colided = colision.hasColided();
-
-	if(colided){
+	if(mapColision.hasColided() || enemies.hasColided(airplane)){
 		printf("bateu");
 		airplane.explode();
 		glFlush();

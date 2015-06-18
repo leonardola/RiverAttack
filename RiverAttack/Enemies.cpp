@@ -113,3 +113,18 @@ bool Enemies::bulletHasCollided(Bullet bullet){
 bool Enemies::isEnemyOutOfScreen(EnemyShape * enemy){
 	return enemy->getBottomPosition() > this->windowHeight;
 }
+
+bool Enemies::hasColided(Airplane plane){
+
+	for(int i = 0; i < this->numberOfEnemies; i++){
+		if(this->isEnemyOutOfScreen(this->listOfEnemies[i])){
+			return false;
+		}
+
+		if(!this->listOfEnemies[i]->isDestroyed() && this->listOfEnemies[i]->hasColided(plane)){
+			return true;
+		}
+	}
+
+	return false;
+}
