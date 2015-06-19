@@ -13,7 +13,7 @@ Enemies::~Enemies(void)
 Enemies::Enemies(int windowHeight, int windowWidth){
 	this->windowHeight = windowHeight;
 	this->windowWidth = windowWidth;
-	this->numberOfEnemies = 30;
+	this->numberOfEnemies = 15;
 	this->lastPosition = this->windowHeight;
 	this->generateEnemies();
 	this->lastEnemy = false;
@@ -138,4 +138,11 @@ bool Enemies::hasColided(Airplane plane){
 bool Enemies::isLastEnemy(){
 
 	return this->lastEnemy;
+}
+
+
+void Enemies::reset(int position){
+	this->lastPosition = -position + this->windowHeight;
+	this->lastEnemy = false;
+	this->generateEnemies();
 }

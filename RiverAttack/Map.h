@@ -10,8 +10,9 @@ public:
 	void drawMap(int initial);
 	Blocks getFirstBlock();
 	Blocks getSecondBlock();
+	void reset();
 private:
-	Blocks listOfBlocks[100];
+	Blocks listOfBlocks[400];
 	int initialPoint;
 	int windowHeight;
 	int windowWidth;
@@ -23,5 +24,6 @@ private:
 	bool firstObjectIsOutOfScreen();
 	void removeFirstObject();
 	void arrayShift();
+	void generateMap();
 };
 

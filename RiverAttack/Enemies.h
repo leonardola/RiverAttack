@@ -13,6 +13,7 @@ public:
 	void draw(int position);
 	bool hasColided(Airplane plane);
 	bool isLastEnemy();
+	void reset(int position);
 private:
 	int numberOfEnemies;
 	int windowHeight;
@@ -25,6 +26,6 @@ private:
 	int getRandomXPosition();
 	int getRandomYPosition();
 	bool lastEnemy;
-	bool Enemies::isEnemyOutOfScreen(BoxShape * enemy);
+	bool isEnemyOutOfScreen(BoxShape * enemy);
 };
 

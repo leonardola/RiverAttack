@@ -96,8 +96,8 @@ void Airplane::explode(){
 		glColor3f(0.0 , 0.0, 0.0); //cor
 		glVertex2f(-this->width + this->xPosition, this->yPosition + this->height);
 		glVertex2f(this->width + this->xPosition, this->yPosition + this->height);
-		glVertex2f(this->width + this->xPosition, this->yPosition - this->height);
-		glVertex2f(-this->width + this->xPosition, this->yPosition - this->height);
+		glVertex2f(this->width + this->xPosition, -this->yPosition);
+		glVertex2f(-this->width + this->xPosition, -this->yPosition);	
 	glEnd();
 
 }

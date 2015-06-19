@@ -107,6 +107,14 @@ void desenhar(int initial){
 
 	if(enemies.isLastEnemy()){
 		bridge.draw(initial);
+		if(bridge.bulletHasCollided(airplane.getBullet())){
+			airplane.getBullet()->reset();
+			enemies.reset(initial);
+ 			bridge.reset();
+		}
+		if(bridge.hasColided(airplane)){
+			airplane.explode();
+		}
 	}
 
 	if(mapColision.hasColided() || enemies.hasColided(airplane)){
