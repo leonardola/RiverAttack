@@ -33,13 +33,24 @@ int Boat::draw(int position){
 	}
 
 	this->position = position; 
+	
 	glBegin(GL_POLYGON);
 		glColor3f(0.0 , 0.7, 0.0); //cor
-		glVertex2f(-this->width + this->xPosition, this->yPosition + this->height + position);
-		glVertex2f(this->width + this->xPosition, this->yPosition + this->height + position);
-		glVertex2f(this->width + this->xPosition, this->yPosition - this->height + position);
-		glVertex2f(-this->width + this->xPosition, this->yPosition - this->height + position);
+		glVertex2f(-this->width + this->xPosition, this->yPosition + this->height/3 + position);
+		glVertex2f(this->width + this->xPosition, this->yPosition + this->height/3 + position);
+		glVertex2f(this->width + this->xPosition - this->width/3, this->yPosition - this->height + position);
+		glVertex2f(-this->width + this->xPosition + this->width/3, this->yPosition - this->height + position);
 	glEnd();
+
+	
+	glBegin(GL_POLYGON);
+		glColor3f(0.0 , 0.7, 0.0); //cor
+		glVertex2f(-20 + this->xPosition, this->yPosition + this->height + position);
+		glVertex2f(20 + this->xPosition, this->yPosition + this->height + position);
+		glVertex2f(20 + this->xPosition - this->width/3, this->yPosition - this->height/3 + position);
+		glVertex2f(-20 + this->xPosition + this->width/3, this->yPosition - this->height/3 + position);
+	glEnd();
+
 
 	return position;
 }

@@ -9,7 +9,9 @@ Score::Score(int windowHeight, int windowWidth){
 	this->windowHeight = windowHeight;
 	this->windowWidth = windowWidth;
 	this->score = 0;
+	this->display = seteSegmentos(windowHeight,windowWidth);
 }
+
 
 Score::~Score(void)
 {
@@ -39,8 +41,14 @@ void Score::draw(){
 		glVertex2f(-this->windowWidth/2 + this->fuelAmountPercentage, 0);
 		glVertex2f(-this->windowWidth/2 - 100, 0);
 	glEnd();
+
+	display.draw(this->score);
 }
 
 void Score::setFuelAmount(int fuelAmount){
 	this->fuelAmountPercentage = fuelAmount;
+}
+
+void Score::reset(){
+	this->score = 0;
 }

@@ -31,7 +31,6 @@ Enemies enemies(windowHeight, windowWidth);
 Bridge bridge(windowHeight, windowWidth);
 Score score(windowHeight, windowWidth);
 
-
 int position = 0;
 int animationTime = 10;
 int airPlaneXPosition = 0;
@@ -97,7 +96,7 @@ void desenhar(int initial){
 	score.setFuelAmount(airplane.getFuelPercentage());
 	score.draw();
 
-	if(airplane.getFuelPercentage() < 50){
+	if(airplane.getFuelPercentage() < 40){
 		fuel.reset(initial);
 		fuel.draw(initial);
 		if(fuel.hasColided(airplane)){
@@ -117,17 +116,19 @@ void desenhar(int initial){
 			airplane.getBullet()->reset();
 			enemies.reset(initial);
  			bridge.reset();
+			score.reset();
 		}
 		if(bridge.hasColided(airplane)){
 			airplane.explode();
+			Sleep(500);
 		}
 	}
 
 	if(mapColision.hasColided() || enemies.hasColided(airplane)){
-		printf("bateu");
 		airplane.explode();
+		score.reset();
 		glFlush();
-		Sleep(1000);
+		Sleep(500);
 	}else{
 		glFlush();
 	}
