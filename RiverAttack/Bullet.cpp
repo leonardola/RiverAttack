@@ -11,7 +11,7 @@ Bullet::~Bullet(void){
 Bullet::Bullet(int windowHeight,int windowWidth){
 	this->windowHeight = windowHeight;
 	this->windowWidth = windowWidth;
-	this->yPosition = 60;
+	this->yPosition = 200;
 	this->xPosition = 0;
 	this->size = 5;
 	this->shooting = false;
@@ -66,7 +66,7 @@ int Bullet::getTopPosition(){
 
 void Bullet::reset(){
 	this->shooting = false;
-	this->yPosition = 60;
+	this->yPosition = 200;
 }
 
 bool Bullet::isShooting(){

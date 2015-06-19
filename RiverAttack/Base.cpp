@@ -40,8 +40,6 @@ int Base::draw(int initial){
 
 bool Base::hasColided(Airplane plane){
 	
-	plane.getYPosition();
-
 	return this->hasColidedWithLeftBase(plane) || this->hasColidedWithRightBase(plane);
 
 }

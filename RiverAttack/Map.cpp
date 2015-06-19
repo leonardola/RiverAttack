@@ -54,19 +54,10 @@ bool Map::firstObjectIsOutOfScreen(){
 }
 
 Blocks Map::getFirstBlock(){
-
-	if(this->firstElement < this->sizeOfMap){
-		return this->listOfBlocks[this->firstElement];
-	}else{
-		return this->listOfBlocks[this->firstElement - 1];
-	}
+	return this->listOfBlocks[this->firstElement];
 }
 
 Blocks Map::getSecondBlock(){
-	if(this->firstElement < this->sizeOfMap){
-		return this->listOfBlocks[this->firstElement + 1];
-	}else{
-		return this->listOfBlocks[this->firstElement];
-	}
+	return this->listOfBlocks[this->firstElement + 1];
 }
 
