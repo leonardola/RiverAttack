@@ -1,7 +1,7 @@
 #pragma once
-#include "EnemyShape.h"
+#include "BoxShape.h"
 
-class Helicopter: public EnemyShape
+class Helicopter: public BoxShape
 {
 public: 
 	Helicopter(void);

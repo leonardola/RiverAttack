@@ -1,6 +1,7 @@
 #pragma once
 #include <GL/glut.h>
 #include "Bullet.h"
+#include <stdio.h>
 class Airplane
 {
 public:
@@ -18,6 +19,9 @@ public:
 	int getInferiorY();
 	void explode();
 	Bullet * getBullet();
+	int getFuelPercentage();
+	void useFuel();
+	void refuel();
 private:
 	int windowHeight;
 	int windowWidth;
@@ -26,6 +30,7 @@ private:
 	int xSpeed;
 	int width;
 	int height;
+	int fuelAmount;
 	Bullet bullet;
 	void shoot();
 

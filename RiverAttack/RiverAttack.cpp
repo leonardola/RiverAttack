@@ -8,9 +8,12 @@
 #include "Colision.h"
 #include "Boat.h"
 #include "Enemies.h"
+#include "Fuel.h"
+#include "Bridge.h"
 
-#define janela_altura 768
-#define janela_largura 1024
+int windowWidth = 1024;
+int windowHeight = 768;
+
 
 void desenhar (int initial);
 void display (void);
@@ -19,12 +22,12 @@ void tela(GLsizei w, GLsizei h);
 void animate(int val);
 void teclado();
 
-Airplane airplane(janela_altura, janela_largura);
-Map map(janela_altura,janela_largura);
+Airplane airplane(windowHeight, windowWidth);
+Map map(windowHeight,windowWidth);
 Colision mapColision(&airplane, &map);
-//Boat boat(janela_altura,janela_largura);
-
-Enemies enemies(janela_altura, janela_largura);
+Fuel fuel(windowHeight,windowWidth);
+Enemies enemies(windowHeight, windowWidth);
+Bridge bridge(windowHeight, windowWidth);
 
 int position = 0;
 int animationTime = 10;
@@ -37,7 +40,7 @@ int main(int argc, char** argv){
 
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB); // padrão de cores
 
-	glutInitWindowSize(janela_largura, janela_altura); // tamanho da janela
+	glutInitWindowSize(windowWidth, windowHeight); // tamanho da janela
 	glutInitWindowPosition(100, 100); //posicao que surge a janela
 	glutCreateWindow("River Attack"); //cria a janela
 
@@ -62,9 +65,9 @@ void display(){
 
 	
 	//ESPECIFICAR O LOCAL AONDE O DESENHO ACONTECE: BEM NO CENTRO
-	glTranslated(janela_largura/2, 0, 0.0f);
+	glTranslated(windowWidth/2, 0, 0.0f);
 
-	glViewport(0, 0, janela_largura, janela_altura);
+	glViewport(0, 0, windowWidth, windowHeight);
 
 	glFlush();//execute o desenho
 }
@@ -75,7 +78,7 @@ void tela(GLsizei w, GLsizei h){
 	glLoadIdentity();
 
 	//cria a janela(esq, direita, embaixo, em cima)
-	gluOrtho2D(0, janela_largura, 0, janela_altura);
+	gluOrtho2D(0, windowWidth, 0, windowHeight);
 
 	glMatrixMode(GL_MODELVIEW);
 }
@@ -87,10 +90,23 @@ void desenhar(int initial){
 	map.drawMap(initial);
 	airplane.getKeyboardAction();
 	airplane.drawPlane();
+	airplane.useFuel();
 
+	if(airplane.getFuelPercentage() < 50){
+		fuel.reset(initial);
+		fuel.draw(initial);
+		if(fuel.hasColided(airplane)){
+			fuel.setDestroyed();
+			airplane.refuel();
+		}
+	}
 	enemies.draw(initial);
 	if(enemies.bulletHasCollided(*airplane.getBullet())){
 		airplane.getBullet()->reset();
+	}
+
+	if(enemies.isLastEnemy()){
+		bridge.draw(initial);
 	}
 
 	if(mapColision.hasColided() || enemies.hasColided(airplane)){

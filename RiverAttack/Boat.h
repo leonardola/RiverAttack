@@ -1,9 +1,9 @@
 #pragma once
-#include "EnemyShape.h"
+#include "BoxShape.h"
 #include "Airplane.h"
 #include <GL/glut.h>
 
-class Boat: public EnemyShape
+class Boat: public BoxShape
 {
 public:
 	Boat(void);

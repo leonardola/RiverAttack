@@ -13,6 +13,7 @@ Airplane::Airplane(int windowHeight, int windowWidth)
 	this->height = 100;
 	this->xPosition = 0;
 	this->yPosition = 100;
+	this->fuelAmount = this->windowHeight*2;
 
 	Bullet bullet(windowHeight,windowWidth);
 	this->bullet = bullet;
@@ -33,7 +34,7 @@ void Airplane::drawPlane(){
 	glEnd();
 	
 	this->bullet.draw();
-	
+
 }
 
 void Airplane::getKeyboardAction(){
@@ -110,3 +111,20 @@ Bullet * Airplane::getBullet(){
 	return &this->bullet;
 }
 
+int Airplane::getFuelPercentage(){
+	return (this->fuelAmount*100)/(this->windowHeight*2);
+}
+
+void Airplane::useFuel(){
+	if(this->fuelAmount <= 0){
+		this->explode();
+		return;
+	}
+
+	this->fuelAmount--;
+	printf("\ncombustivel %i:",this->getFuelPercentage());
+}
+
+void Airplane::refuel(){
+	this->fuelAmount = this->windowHeight * 2;
+}

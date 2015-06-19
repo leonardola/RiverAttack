@@ -16,6 +16,7 @@ Enemies::Enemies(int windowHeight, int windowWidth){
 	this->numberOfEnemies = 30;
 	this->lastPosition = this->windowHeight;
 	this->generateEnemies();
+	this->lastEnemy = false;
 }
 
 void Enemies::generateEnemies(){
@@ -46,7 +47,7 @@ void Enemies::draw(int position){
 	}
 }
 
-EnemyShape * Enemies::generateRandomEnemy(){
+BoxShape * Enemies::generateRandomEnemy(){
 
 	int random = rand() % 100;
 
@@ -105,14 +106,19 @@ bool Enemies::bulletHasCollided(Bullet bullet){
 			this->listOfEnemies[i]->setDestroyed();
 			return true;
 		}
+
+		if(i == this->numberOfEnemies-1){
+			this->lastEnemy = true;
+		}
 	}
 
 	return false;
 }
 
-bool Enemies::isEnemyOutOfScreen(EnemyShape * enemy){
+bool Enemies::isEnemyOutOfScreen(BoxShape * enemy){
 	return enemy->getBottomPosition() > this->windowHeight;
 }
+
 
 bool Enemies::hasColided(Airplane plane){
 
@@ -127,4 +133,9 @@ bool Enemies::hasColided(Airplane plane){
 	}
 
 	return false;
+}
+
+bool Enemies::isLastEnemy(){
+
+	return this->lastEnemy;
 }
