@@ -10,6 +10,7 @@
 #include "Enemies.h"
 #include "Fuel.h"
 #include "Bridge.h"
+#include "Score.h"
 
 int windowWidth = 1024;
 int windowHeight = 768;
@@ -28,6 +29,8 @@ Colision mapColision(&airplane, &map);
 Fuel fuel(windowHeight,windowWidth);
 Enemies enemies(windowHeight, windowWidth);
 Bridge bridge(windowHeight, windowWidth);
+Score score(windowHeight, windowWidth);
+
 
 int position = 0;
 int animationTime = 10;
@@ -91,6 +94,8 @@ void desenhar(int initial){
 	airplane.getKeyboardAction();
 	airplane.drawPlane();
 	airplane.useFuel();
+	score.setFuelAmount(airplane.getFuelPercentage());
+	score.draw();
 
 	if(airplane.getFuelPercentage() < 50){
 		fuel.reset(initial);
@@ -103,6 +108,7 @@ void desenhar(int initial){
 	enemies.draw(initial);
 	if(enemies.bulletHasCollided(*airplane.getBullet())){
 		airplane.getBullet()->reset();
+		score.addScore();
 	}
 
 	if(enemies.isLastEnemy()){
