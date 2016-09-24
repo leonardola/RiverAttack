@@ -1,0 +1,13 @@
+#pragma once
+#include "constantes.h"
+
+class seteSegmentos
+{
+private:
+	formas formaSegmento;
+public:		
+	seteSegmentos(void);
+	void geraUmSegmento(int valor, int posX, int posY);
+	void controlePlacar(int pontuacao);
+};
+

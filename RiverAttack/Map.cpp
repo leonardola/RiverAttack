@@ -3,6 +3,7 @@
 Map::Map(void){
 
 }
+
 Map::Map(int windowHeight, int windowWidth){
 	this->windowHeight = windowHeight;
 	this->windowWidth = windowWidth;
